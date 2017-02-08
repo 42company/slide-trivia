@@ -11,7 +11,7 @@ config = {
     // When running Ghost in the wild, use the production environment.
     // Configure your URL and mail settings here
     production: {
-        url: 'http://my-ghost-blog.com',
+        url: process.env.URL || 'http://my-ghost-blog.com',
         mail: {},
         database: {
             client: 'sqlite3',
@@ -20,10 +20,9 @@ config = {
             },
             debug: false
         },
-
         server: {
-            host: '127.0.0.1',
-            port: '2368'
+            host: '0.0.0.0',
+            port: process.env.PORT
         }
     },
 
@@ -56,19 +55,22 @@ config = {
         // #### Database
         // Ghost supports sqlite3 (default), MySQL & PostgreSQL
         database: {
-            client: 'sqlite3',
+            client: 'postgres',
             connection: {
-                filename: path.join(__dirname, '/content/data/ghost-dev.db')
-            },
-            debug: false
+                host: process.env.POSTRGRES_HOST,
+                user: process.env.POSTGRES_USER,
+                password: process.env.POSTGRES_PASSWORD,
+                database: process.env.POSTGRES_DATABASE,
+                port: '5432'
+            }
         },
         // #### Server
         // Can be host & port (default), or socket
         server: {
             // Host to be passed to node's `net.Server#listen()`
-            host: '127.0.0.1',
+            host: '0.0.0.0',
             // Port to be passed to node's `net.Server#listen()`, for iisnode set this to `process.env.PORT`
-            port: '2368'
+            port: process.env.PORT
         },
         // #### Paths
         // Specify where your content directory lives

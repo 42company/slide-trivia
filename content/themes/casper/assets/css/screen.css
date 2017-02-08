@@ -842,10 +842,12 @@ body.nav-opened .nav {
     display: none
 }
 
+/* Modified */
 /* Appears in the top left corner of your home page */
 .blog-logo {
     display: block;
-    float: left;
+    margin-left: auto;
+    margin-right: auto;
     background: none !important; /* Makes sure there is never a background */
     border: none !important; /* Makes sure there is never a border */
 }
@@ -1167,6 +1169,11 @@ body.page-template .post-title {
 .post-template .post:after,
 .page-template .post:after {
     display: none;
+}
+
+/* Modified */
+.post-content a {
+  color: #8A2BE2;
 }
 
 /* Keep images centered, and allow images wider than the main
