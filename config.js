@@ -22,7 +22,7 @@ config = {
         },
         server: {
             host: '0.0.0.0',
-            port: process.env.PORT
+            port: process.env.PORT || 2368
         }
     },
 
@@ -55,14 +55,11 @@ config = {
         // #### Database
         // Ghost supports sqlite3 (default), MySQL & PostgreSQL
         database: {
-            client: 'postgres',
+            client: 'sqlite3',
             connection: {
-                host: process.env.POSTRGRES_HOST,
-                user: process.env.POSTGRES_USER,
-                password: process.env.POSTGRES_PASSWORD,
-                database: process.env.POSTGRES_DATABASE,
-                port: '5432'
-            }
+                filename: path.join(__dirname, '/content/data/ghost.db')
+            },
+            debug: false
         },
         // #### Server
         // Can be host & port (default), or socket
@@ -70,7 +67,7 @@ config = {
             // Host to be passed to node's `net.Server#listen()`
             host: '0.0.0.0',
             // Port to be passed to node's `net.Server#listen()`, for iisnode set this to `process.env.PORT`
-            port: process.env.PORT
+            port: process.env.PORT || 2368
         },
         // #### Paths
         // Specify where your content directory lives
