@@ -68,7 +68,7 @@ config = {
         // #### Database
         // postgres://bngieymlpugufa:a43aa4a1ca0bbfbea4cfa219b68237f1db2cd49310ee67754d61441fe0ee479b@ec2-23-21-238-246.compute-1.amazonaws.com:5432/dandp6nsbs99d9
         // Ghost supports sqlite3 (default), MySQL & PostgreSQL
-        database: process.env.HEROKU_POSTGRESQL_OLIVE_URL ? process.env.pgDatabase(process.env.HEROKU_POSTGRESQL_OLIVE_URL) : {
+        database: process.env.HEROKU_POSTGRESQL_OLIVE_URL ? pgDatabase(process.env.HEROKU_POSTGRESQL_OLIVE_URL) : {
             client: 'sqlite3',
             connection: {
                 filename: path.join(__dirname, '/content/data/ghost.db')
