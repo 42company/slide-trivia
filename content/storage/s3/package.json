@@ -1,0 +1,121 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "ghost-storage-adapter-s3",
+        "scope": null,
+        "escapedName": "ghost-storage-adapter-s3",
+        "name": "ghost-storage-adapter-s3",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "/Users/OneMonster/Desktop/42/Ghost-0.11.4"
+    ]
+  ],
+  "_from": "ghost-storage-adapter-s3@latest",
+  "_id": "ghost-storage-adapter-s3@1.2.0",
+  "_inCache": true,
+  "_location": "/ghost-storage-adapter-s3",
+  "_nodeVersion": "4.6.0",
+  "_npmOperationalInternal": {
+    "host": "packages-16-east.internal.npmjs.com",
+    "tmp": "tmp/ghost-storage-adapter-s3-1.2.0.tgz_1475576178497_0.25997580168768764"
+  },
+  "_npmUser": {
+    "name": "colinmeinke",
+    "email": "hello@colinmeinke.com"
+  },
+  "_npmVersion": "2.15.11",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "ghost-storage-adapter-s3",
+    "scope": null,
+    "escapedName": "ghost-storage-adapter-s3",
+    "name": "ghost-storage-adapter-s3",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/ghost-storage-adapter-s3/-/ghost-storage-adapter-s3-1.2.0.tgz",
+  "_shasum": "688acbf36698f7864920468f2ce07cc776fefb2a",
+  "_shrinkwrap": null,
+  "_spec": "ghost-storage-adapter-s3",
+  "_where": "/Users/OneMonster/Desktop/42/Ghost-0.11.4",
+  "author": {
+    "name": "Colin Meinke",
+    "email": "hello@colinmeinke.com",
+    "url": "colinmeinke.com"
+  },
+  "babel": {
+    "plugins": [
+      "transform-object-rest-spread",
+      "add-module-exports"
+    ],
+    "presets": [
+      "es2015"
+    ]
+  },
+  "bugs": {
+    "url": "https://github.com/colinmeinke/ghost-storage-adapter-s3/issues"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
+  },
+  "dependencies": {
+    "aws-sdk": "^2.6.3",
+    "bluebird": "^3.4.6"
+  },
+  "description": "An AWS S3 storage adapter for Ghost 0.10+",
+  "devDependencies": {
+    "babel-cli": "^6.14.0",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-transform-object-rest-spread": "^6.8.0",
+    "babel-preset-es2015": "^6.14.0",
+    "commitizen": "^2.8.6",
+    "cz-conventional-changelog": "^1.2.0",
+    "semantic-release": "^4.3.5"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "688acbf36698f7864920468f2ce07cc776fefb2a",
+    "tarball": "https://registry.npmjs.org/ghost-storage-adapter-s3/-/ghost-storage-adapter-s3-1.2.0.tgz"
+  },
+  "gitHead": "94260d1d18a6f62c6471384a7421a8e641014ef5",
+  "homepage": "https://github.com/colinmeinke/ghost-storage-adapter-s3#readme",
+  "keywords": [
+    "adapter",
+    "aws",
+    "ghost",
+    "s3",
+    "storage"
+  ],
+  "license": "ISC",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "colinmeinke",
+      "email": "hello@colinmeinke.com"
+    }
+  ],
+  "name": "ghost-storage-adapter-s3",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/colinmeinke/ghost-storage-adapter-s3.git"
+  },
+  "scripts": {
+    "build": "babel ./src/index.js --out-file ./index.js",
+    "commit": "git-cz",
+    "prepublish": "npm run build",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "test": "exit 0"
+  },
+  "version": "1.2.0"
+}
