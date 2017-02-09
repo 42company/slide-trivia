@@ -6,6 +6,19 @@
 var path = require('path'),
     config;
 
+function pgDatabase (pgUrl) {
+    return {
+        client: 'pg',
+        connection: {
+            host: pgUrl.match(/@(.*):/)[1],
+            user: pgUrl.match(/postgres:\/\/([^:]*):/)[1],
+            password: pgUrl.match(/:([^:]*)@/)[1],
+            database: pgUrl.match(/([^\/]*$)/)[1],
+            charset: 'utf8'
+        }
+    }
+}
+
 config = {
     // ### Production
     // When running Ghost in the wild, use the production environment.
@@ -13,13 +26,14 @@ config = {
     production: {
         url: process.env.URL || 'http://my-ghost-blog.com',
         mail: {},
-        database: {
-            client: 'sqlite3',
-            connection: {
-                filename: path.join(__dirname, '/content/data/ghost.db')
-            },
-            debug: false
-        },
+        database: pgDatabase(process.env.DATABASE_URL),
+        // database: {
+        //     client: 'sqlite3',
+        //     connection: {
+        //         filename: path.join(__dirname, '/content/data/ghost.db')
+        //     },
+        //     debug: false
+        // },
         server: {
             host: '0.0.0.0',
             port: process.env.PORT || 2368
@@ -53,14 +67,16 @@ config = {
         // ```
 
         // #### Database
+        // postgres://bngieymlpugufa:a43aa4a1ca0bbfbea4cfa219b68237f1db2cd49310ee67754d61441fe0ee479b@ec2-23-21-238-246.compute-1.amazonaws.com:5432/dandp6nsbs99d9
         // Ghost supports sqlite3 (default), MySQL & PostgreSQL
-        database: {
-            client: 'sqlite3',
-            connection: {
-                filename: path.join(__dirname, '/content/data/ghost.db')
-            },
-            debug: false
-        },
+        database: pgDatabase(process.env.HEROKU_POSTGRESQL_WHITE_URL),
+        // database: {
+        //     client: 'sqlite3',
+        //     connection: {
+        //         filename: path.join(__dirname, '/content/data/ghost.db')
+        //     },
+        //     debug: false
+        // },
         // #### Server
         // Can be host & port (default), or socket
         server: {
