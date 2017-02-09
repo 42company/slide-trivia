@@ -1,21 +1,40 @@
 {
-  "name": "Slide Trivia",
-  "description": "Trivia content for the slide-app by the slide team",
-  "keywords": [
-    "small",
-    "sharp",
-    "tool"
-  ],
-  "addons": [
-    "heroku-postgresql:hobby-dev",
-    "heroku-postgresql:hobby-dev",
-    "papertrail:choklad"
-  ],
+  "name": "slide-trivia",
+  "scripts": {
+  },
   "env": {
-    "PGSSLMODE": "require",
-    "POSTGRES_DATABASE": "d2hkdjeiskdp3j",
-    "POSTGRES_HOST": "ec2-54-225-242-74.compute-1.amazonaws.com",
-    "POSTGRES_PASSWORD": "REDACTED",
-    "POSTGRES_USER": "idhwfgoxlefbux"
-  }
+    "HEROKU_POSTGRESQL_OLIVE_URL": {
+      "required": true
+    },
+    "PAPERTRAIL_API_TOKEN": {
+      "required": true
+    },
+    "PGSSLMODE": {
+      "required": true
+    },
+    "POSTGRES_DATABASE": {
+      "required": true
+    },
+    "POSTGRES_HOST": {
+      "required": true
+    },
+    "POSTGRES_PASSWORD": {
+      "required": true
+    },
+    "POSTGRES_USER": {
+      "required": true
+    }
+  },
+  "formation": {
+  },
+  "addons": [
+    "papertrail",
+    "heroku-postgresql",
+    "heroku-postgresql"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
 }
