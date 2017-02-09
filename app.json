@@ -1,0 +1,40 @@
+{
+  "name": "slide-trivia",
+  "scripts": {
+  },
+  "env": {
+    "HEROKU_POSTGRESQL_OLIVE_URL": {
+      "required": true
+    },
+    "PAPERTRAIL_API_TOKEN": {
+      "required": true
+    },
+    "PGSSLMODE": {
+      "required": true
+    },
+    "POSTGRES_DATABASE": {
+      "required": true
+    },
+    "POSTGRES_HOST": {
+      "required": true
+    },
+    "POSTGRES_PASSWORD": {
+      "required": true
+    },
+    "POSTGRES_USER": {
+      "required": true
+    }
+  },
+  "formation": {
+  },
+  "addons": [
+    "papertrail",
+    "heroku-postgresql",
+    "heroku-postgresql"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}
