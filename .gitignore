@@ -1,6 +1,6 @@
 node_modules
 .env
-npm-debug.log
-content/data/ghost-dev.db
+*.log
+content/data/*.db
 images
 !images/README.md

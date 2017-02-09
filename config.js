@@ -14,12 +14,22 @@ config = {
         url: process.env.URL || 'http://my-ghost-blog.com',
         mail: {},
         database: {
-            client: 'sqlite3',
+            client: 'pg',
             connection: {
-                filename: path.join(__dirname, '/content/data/ghost.db')
-            },
-            debug: false
+                host: process.env.POSTGRES_HOST,
+                user: process.env.POSTGRES_USER,
+                password: process.env.POSTGRES_PASSWORD,
+                database: process.env.POSTGRES_DATABASE,
+                charset  : 'utf8'
+            }
         },
+        // database: {
+        //     client: 'sqlite3',
+        //     connection: {
+        //         filename: path.join(__dirname, '/content/data/ghost.db')
+        //     },
+        //     debug: false
+        // },
         server: {
             host: '0.0.0.0',
             port: process.env.PORT || 2368
@@ -53,14 +63,25 @@ config = {
         // ```
 
         // #### Database
+        // postgres://bngieymlpugufa:a43aa4a1ca0bbfbea4cfa219b68237f1db2cd49310ee67754d61441fe0ee479b@ec2-23-21-238-246.compute-1.amazonaws.com:5432/dandp6nsbs99d9
         // Ghost supports sqlite3 (default), MySQL & PostgreSQL
         database: {
-            client: 'sqlite3',
+            client: 'pg',
             connection: {
-                filename: path.join(__dirname, '/content/data/ghost.db')
-            },
-            debug: false
+                host     : 'ec2-23-21-238-246.compute-1.amazonaws.com',
+                user     : 'bngieymlpugufa',
+                password : 'a43aa4a1ca0bbfbea4cfa219b68237f1db2cd49310ee67754d61441fe0ee479b',
+                database : 'dandp6nsbs99d9',
+                charset  : 'utf8'
+            }
         },
+        // database: {
+        //     client: 'sqlite3',
+        //     connection: {
+        //         filename: path.join(__dirname, '/content/data/ghost.db')
+        //     },
+        //     debug: false
+        // },
         // #### Server
         // Can be host & port (default), or socket
         server: {
