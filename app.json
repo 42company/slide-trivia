@@ -3,27 +3,21 @@
   "scripts": {
   },
   "env": {
-    "HEROKU_POSTGRESQL_OLIVE_URL": {
-      "required": true
-    },
     "PAPERTRAIL_API_TOKEN": {
       "required": true
     },
-    "PGSSLMODE": {
-      "required": true
-    },
-    "POSTGRES_DATABASE": {
-      "required": true
-    },
-    "POSTGRES_HOST": {
-      "required": true
-    },
-    "POSTGRES_PASSWORD": {
-      "required": true
-    },
-    "POSTGRES_USER": {
-      "required": true
-    }
+	"AWS_ACCESS_KEY_ID": {
+	  "required": true
+	},
+	"AWS_SECRET_ACCESS_KEY": {
+	  "required": true
+	},
+	"S3_BUCKET": {
+	  "required": true
+	},
+	"S3_REGION": {
+	  "required": true
+	}
   },
   "formation": {
   },
