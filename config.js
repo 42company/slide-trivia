@@ -36,6 +36,16 @@ config = {
         server: {
             host: '0.0.0.0',
             port: process.env.PORT || 2368
+        },
+        storage: {
+            active: 's3',
+            's3': {
+                accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+                secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+                bucket: process.env.S3_BUCKET,
+                region: process.env.S3_REGION,
+                assetHost: process.env.ASSET_HOST
+            }
         }
     },
 
